@@ -5,7 +5,7 @@ const apiClient: AxiosInstance = axios.create({
     headers: {
         'Content-type': 'application/json',
         Accept: 'application/vnd.github.v3+json',
-        Authorization: 'token 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'
+        Authorization: `token ${process.env.VUE_APP_TOKEN_GIT}`
     }
 });
 
