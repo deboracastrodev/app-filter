@@ -3,7 +3,6 @@ import { UserStoreModuleTypes } from './modules/users/types';
 import { GistsStoreModuleTypes } from './modules/gists/types';
 import { RootStoreModuleTypes } from './modules/root/types';
 import root from './modules/root';
-import Gists from '@/database/models/gists';
 
 import VuexORM from '@vuex-orm/core';
 

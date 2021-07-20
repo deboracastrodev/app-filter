@@ -1,11 +1,10 @@
-import { Model } from '@vuex-orm/core';
-import User from './user';
+import { Collection, Model } from '@vuex-orm/core';
 import { format } from 'date-fns';
 
 export default class Gists extends Model {
     static entity = 'gists';
 
-    static fields() {
+    static fields(): any {
         return {
             id: this.attr(null),
             url: this.attr(null),
@@ -28,22 +27,22 @@ export default class Gists extends Model {
         };
     }
 
-    get updated_at_formated() {
+    get updated_at_formated(): string {
         const data = JSON.parse(JSON.stringify(this));
         return format(new Date(data.updated_at), 'dd/MM/yyyy H:mm:ss');
     }
 
-    get created_at_formated() {
+    get created_at_formated(): string {
         const data = JSON.parse(JSON.stringify(this));
         return format(new Date(data.created_at), 'dd/MM/yyyy H:mm:ss');
     }
 
-    get sum_files() {
+    get sum_files(): number {
         const data = JSON.parse(JSON.stringify(this));
-        return Object.keys(data.files).length;
+        return data.files ? Object.keys(data.files).length : 0;
     }
 
-    get file_types_formated() {
+    get file_types_formated(): string {
         const data = JSON.parse(JSON.stringify(this));
         let response_html = '';
         Object.getOwnPropertyNames(data.files)

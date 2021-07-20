@@ -1,5 +1,4 @@
-import { Model, Attr, Str, HasMany, Num } from '@vuex-orm/core';
-import Gists from './gists';
+import { Model, Attr, Str, Num } from '@vuex-orm/core';
 
 export default class User extends Model {
     static entity = 'users';

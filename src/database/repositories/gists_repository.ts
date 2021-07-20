@@ -7,8 +7,6 @@ export default class GistsRepository extends Repository {
     use = Gists;
 
     async getGists(params: IGistsParamData): any {
-        console.log('inicializas');
-
         const { data } = await apiClient.get('/gists', { params });
         this.fresh(data.data);
     }
