@@ -8,6 +8,7 @@
 
 // /* eslint-disable import/no-extraneous-dependencies, global-require */
 // const webpack = require('@cypress/webpack-preprocessor')
+// require('.env.development').config();
 
 module.exports = (on, config) => {
     // on('file:preprocessor', webpack({
@@ -16,6 +17,7 @@ module.exports = (on, config) => {
     // }))
 
     return Object.assign({}, config, {
+        baseUrlApi: 'https://api.github.com/',
         fixturesFolder: 'tests/e2e/fixtures',
         integrationFolder: 'tests/e2e/specs',
         screenshotsFolder: 'tests/e2e/screenshots',
